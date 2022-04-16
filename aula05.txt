@@ -1,0 +1,116 @@
+FFEr----- EMAILS-------
+
+
+p.quadros.a@gmail.com
+renato.f.s00@hotmail.com
+filipedebarros@hotmail.com
+
+
+
+https://www.maujor.com/
+
+
+https://developer.mozilla.org/pt-BR/docs/Web/HTML
+
+https://www.w3schools.com/
+
+https://developer.mozilla.org/pt-BR/docs/Web
+
+https://htmlcolorcodes.com/color-picker/
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div{
+            padding: 20px;   
+        }
+        table{
+            background-color: #777777;
+        }
+        .botao{
+            background-color: #f1d587;
+            width: 50px;
+            height: 50px;
+            font-size: 15px;
+            border: 1;
+            font-weight: bold;
+        }
+        .tela{
+            width: 210px;
+            height: 50px;
+            background-color: #000000;
+            color: #FFFFFF;
+            border: 1;
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
+    <title>Calculadora</title>
+</head>
+<body>
+    <div>
+        <h2>Calculadora</h2>
+            <form name="meu_form">
+                <table border="1">
+                    <tr>
+                        <td colspan="4"><input type="text" class="tela" name="minha_tela" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value=" C " class="botao" onclick="limpar()"></td>
+                        <td><input type="button" value=" del " class="botao" onclick="deletar()"></td>
+                        <td><input type="button" value=" - " class="botao" onclick="inserir(' - ')"></td>
+                        <td><input type="button" value=" + " class="botao" onclick="inserir(' + ')" ></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value=" 1 " class="botao" onclick="inserir(1)"></td>
+                        <td><input type="button" value=" 2 " class="botao" onclick="inserir(2)"></td>
+                        <td><input type="button" value=" 3 " class="botao" onclick="inserir(3)"></td>
+                        <td><input type="button" value=" / " class="botao" onclick="inserir(' / ')"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value=" 4 " class="botao" onclick="inserir(4)"></td>
+                        <td><input type="button" value=" 5 " class="botao" onclick="inserir(5)"></td>
+                        <td><input type="button" value=" 6 " class="botao" onclick="inserir(6)"></td>
+                        <td><input type="button" value=" * " class="botao" onclick="inserir(' * ')"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value=" 7 " class="botao" onclick="inserir(7)"></td>
+                        <td><input type="button" value=" 8 " class="botao" onclick="inserir(8)"></td>
+                        <td><input type="button" value=" 9 " class="botao" onclick="inserir(9)"></td>
+                        <td><input type="button" value=" = " class="botao" onclick="total()"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value=" . " class="botao" onclick="inserir(' . ')"></td>
+                        <td><input type="button" value=" 0 " class="botao" onclick="inserir(0)"></td>
+                    </tr>
+                </table>
+            </form>
+    </div>
+    <script>
+        function limpar(){
+            document.meu_form.minha_tela.value = "";
+        }
+        function inserir(valor){
+            document.meu_form.minha_tela.value = document.meu_form.minha_tela.value + valor;
+        }
+        function total(){
+            var meu_resultado = document.meu_form.minha_tela.value;
+            if(meu_resultado){
+                document.meu_form.minha_tela.value = eval(meu_resultado);
+            }
+        }
+        function deletar(){
+            var meu_conteudo = document.meu_form.minha_tela.value;
+            document.meu_form.minha_tela.value = meu_conteudo.substring(0 , meu_conteudo.length-1);
+        }
+    </script>
+</body>
+</html>
