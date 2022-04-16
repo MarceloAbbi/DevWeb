@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="sortcut icon" type="image/png" href="../calc_interno/icone.png" />
+    <style>
+        div{
+            padding: 20px;
+        }
+        table{
+            background-color: #777777;
+            padding: 2px;
+        }
+        .botoes{
+            background-color: #ecd469;
+            width: 47px;
+            height: 47px;
+            font-size: 15px;
+            border: 1;
+            font-weight: bold;
+        }
+        .tela{ 
+            width: 200px;
+            height: 47px;
+            background-color: #000000;
+            color: #ffffff;
+            border: 1;
+            font-size: 25px;
+            font-size: bold;
+        }
+       </style>
+    <title>Minha primeira calculadora</title>
+</head>
+<body>
+    <div>
+        <h2>Minha primeira calculadora</h2>
+            <form name="meu_form">
+                <table>
+                    <tr>
+                        <td colspan="4"><input type="text" name="minha_tela" readonly class="tela"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value=" C " onclick="limpar()" class="botoes"></td>
+                        <td><input type="button" value=" del " onclick="deletar()" class="botoes"></td>
+                        <td><input type="button" value=" - " onclick="inserir(' - ')" class="botoes"></td>
+                        <td><input type="button" value=" + " onclick="inserir(' + ')" class="botoes"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value=" 1 " onclick="inserir(1)" class="botoes"></td>
+                        <td><input type="button" value=" 2 " onclick="inserir(2)" class="botoes"></td>
+                        <td><input type="button" value=" 3 " onclick="inserir(3)" class="botoes"></td>
+                        <td><input type="button" value=" / " onclick="inserir(' / ')" class="botoes"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value=" 4 " onclick="inserir(4)" class="botoes"></td>
+                        <td><input type="button" value=" 5 " onclick="inserir(5)" class="botoes"></td>
+                        <td><input type="button" value=" 6 " onclick="inserir(6)" class="botoes"></td>
+                        <td><input type="button" value=" * " onclick="inserir(' * ')" class="botoes"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value=" 7 " onclick="inserir(7)" class="botoes"></td>
+                        <td><input type="button" value=" 8 " onclick="inserir(8)" class="botoes"></td>
+                        <td><input type="button" value=" 9 " onclick="inserir(9)" class="botoes"></td>
+                        <td><input type="button" value=" = " onclick="total()" class="botoes"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value=" . " onclick="inserir('.') "class="botoes"></td>
+                        <td><input type="button" value=" 0 " onclick="inserir(0)" class="botoes"></td>
+                    </tr>
+                </table>
+           </form>
+        </div>
+    <div>
+    <img src="../calc_interno/calc.png" alt="Minha imagem deveria estar aqui.">
+    </div>
+    <script type="text/javascript">
+        function limpar(){
+            document.meu_form.minha_tela.value = "";
+        }
+        function inserir(meu_numero){
+            document.meu_form.minha_tela.value = document.meu_form.minha_tela.value + meu_numero;  
+        } 
+        function deletar(){
+            var meu_conteudo = document.meu_form.minha_tela.value;
+            document.meu_form.minha_tela.value = meu_conteudo.substring(0 , meu_conteudo.length-1);
+        }
+        function total(){
+            var meu_resultado = document.meu_form.minha_tela.value;
+            if(meu_resultado){
+                document.meu_form.minha_tela.value = eval(meu_resultado);
+            }
+        }
+    </script>
+</body>
+</html>
