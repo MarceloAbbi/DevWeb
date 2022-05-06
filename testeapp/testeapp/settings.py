@@ -38,8 +38,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'core.apps.CoreConfig',
-    'widget_tweaks', 
     'categories.apps.CategoriesConfig',
+    'widget_tweaks', 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
