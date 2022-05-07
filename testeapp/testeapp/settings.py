@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'categories.apps.CategoriesConfig',
     'socialnetworks.apps.SocialnetworksConfig',
+    'products.apps.ProductsConfig',
     'widget_tweaks', 
     'django.contrib.admin',
     'django.contrib.auth',
