@@ -22,7 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('categorias/', include('categories.urls', namespace='categories')),
     path('', include('core.urls', namespace='core')),
-    path('categorias/', include('categories.urls', namespace='categories')),
+    path('redessociais/', include('socialnetworks.urls', namespace='socialnetworks')),
+
 
 ]
 
