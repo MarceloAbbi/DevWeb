@@ -39,6 +39,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'categories.apps.CategoriesConfig',
+    'socialnetworks.apps.SocialnetworksConfig',
     'widget_tweaks', 
     'django.contrib.admin',
     'django.contrib.auth',
