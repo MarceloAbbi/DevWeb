@@ -20,6 +20,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('pedidos/', include('orders.urls', namespace='orders')),
     path('clientes/', include('clients.urls', namespace='clients')),
     path('categorias/', include('categories.urls', namespace='categories')),
     path('redessociais/', include('socialnetworks.urls', namespace='socialnetworks')),
