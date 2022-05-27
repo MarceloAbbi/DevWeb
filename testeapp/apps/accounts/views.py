@@ -69,3 +69,4 @@ def user_change_information(request, username):
     form = UserChangeInformationForm(instance=user)
     context['form'] = form
     return render(request, template_name, context)
+
